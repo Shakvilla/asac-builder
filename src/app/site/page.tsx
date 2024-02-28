@@ -83,12 +83,11 @@ export default function Home() {
                     ))}
                 </div>
                 <Link
-                  href={`/agency?plan=${card.id}`}
+                  href={`/agency?plan=${card.priceId}`}
                   className={clsx(
                     "w-full text-center bg-primary p-2 rounded-md",
                     {
-                      "!bg-muted-foreground":
-                        card.nickname !== "Unlimited Saas",
+                      "!bg-muted-foreground": card.title !== "Unlimited Saas",
                     }
                   )}
                 >
