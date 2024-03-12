@@ -39,12 +39,14 @@ import { Input } from "../ui/input";
 import { Switch } from "../ui/switch";
 import { NumberInput } from "@tremor/react";
 import Loading from "../global/loading";
+import { v4 } from "uuid";
 
 import {
   deleteAgency,
   initUser,
   saveActivityLogsNotification,
   updateAgencyDetails,
+  upsertAgency,
 } from "@/lib/queries";
 // import { AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
 type Props = {
@@ -132,11 +134,11 @@ const AgencyDetails = ({ data }: Props) => {
       }
 
       newUserData = await initUser({ role: "AGENCY_OWNER" });
-      if (!data?.customerId && !custId) return;
+      if (!data) return;
 
       const response = await upsertAgency({
         id: data?.id ? data.id : v4(),
-        customerId: data?.customerId || custId || "",
+        // customerId: data?.customerId || custId || "",
         address: values.address,
         agencyLogo: values.agencyLogo,
         city: values.city,
@@ -163,7 +165,7 @@ const AgencyDetails = ({ data }: Props) => {
       console.log(error);
       toast({
         variant: "destructive",
-        title: "Oppse!",
+        title: "Oppps!!!",
         description: "could not create your agency",
       });
     }
