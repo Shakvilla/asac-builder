@@ -266,4 +266,6 @@ export const initUser = async (newUser: Partial<User>) => {
       role: newUser.role || "SUBACCOUNT_USER",
     },
   });
+
+  return userData;
 };

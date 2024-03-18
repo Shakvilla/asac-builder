@@ -347,7 +347,7 @@ const AgencyDetails = ({ data }: Props) => {
                   name="zipCode"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Zipcpde</FormLabel>
+                      <FormLabel>Zipcode</FormLabel>
                       <FormControl>
                         <Input placeholder="Zipcode" {...field} />
                       </FormControl>
@@ -401,14 +401,17 @@ const AgencyDetails = ({ data }: Props) => {
             </form>
           </Form>
           {data?.id && (
-            <div className="flex flex-row items-center justify-between rounded-lg border border-destructive gap-4 p-4 mt-4">
-              <div>
-                <div>Danger Zone</div>
-              </div>
-              <div className="text-muted-foreground">
-                Deleting your agency cannpt be undone. This will also delete all
-                sub accounts and all data related to your sub accounts. Sub
-                accounts will no longer have access to funnels, contacts etc.
+            <>
+              <div className="flex flex-row items-center justify-between rounded-lg border border-destructive gap-4 p-4 mt-4">
+                <div>
+                  <div>Danger Zone</div>
+                </div>
+                <div className="text-muted-foreground">
+                  Deleting your agency cannpt be undone. This will also delete
+                  all sub accounts and all data related to your sub accounts.
+                  Sub accounts will no longer have access to funnels, contacts
+                  etc.
+                </div>
               </div>
               <AlertDialogTrigger
                 disabled={isLoading || deletingAgency}
@@ -416,7 +419,7 @@ const AgencyDetails = ({ data }: Props) => {
               >
                 {deletingAgency ? "Deleting..." : "Delete Agency"}
               </AlertDialogTrigger>
-            </div>
+            </>
           )}
 
           <AlertDialogContent>
