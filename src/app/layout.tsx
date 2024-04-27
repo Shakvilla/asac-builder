@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 
 import "./globals.css";
+import Providers from "./Providers";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Providers>{children}</Providers>
         </ThemeProvider>
       </body>
     </html>

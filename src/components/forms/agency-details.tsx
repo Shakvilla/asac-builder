@@ -34,7 +34,7 @@ import {
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
-import FileUpload from "@/lib/file-upload";
+// import FileUpload from "@/lib/file-upload";
 import { Input } from "../ui/input";
 import { Switch } from "../ui/switch";
 import { NumberInput } from "@tremor/react";
@@ -48,6 +48,7 @@ import {
   updateAgencyDetails,
   upsertAgency,
 } from "@/lib/queries";
+import FileUpload from "../global/file-upload";
 // import { AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
 type Props = {
   data?: Partial<Agency>;
